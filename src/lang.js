@@ -1,5 +1,5 @@
-import { e_reloadPage } from "./ui";
-import { writeConfig } from "./utils";
+import { e_reloadPage } from './ui';
+import { writeConfig } from './utils';
 
 /**
  * 存储语言文本
@@ -46,7 +46,8 @@ export const languages = {
         'ui.tooltip.playerAmountError': 'Please add at least two players',
         'ui.tooltip.winningBallsError': 'Please enter a valid number of winning balls',
         'ui.tooltip.serveRuleError': 'Please choose a valid serve rule',
-        'ui.tooltip.rotationalServesError': 'Please enter a valid number of rotational serves number',
+        'ui.tooltip.rotationalServesError':
+            'Please enter a valid number of rotational serves number',
         'ui.tooltip.repoTip': 'Issues and PRs are welcome!!!',
         'ui.tooltip.noScoreToUndo': 'No score to undo',
         'ui.gameBoard.matchHistory.match': 'Match',
@@ -238,7 +239,8 @@ export const languages = {
         'ui.tooltip.playerAmountError': 'Παρακαλώ εισάγετε τουλάχιστον δύο παίκτες',
         'ui.tooltip.winningBallsError': 'Παρακαλω εισάγετε έναν έγκυρο αριθμό κερδισμένων μπαλων ',
         'ui.tooltip.serveRuleError': 'Παρακαλώ να επιλέξετε έναν έγκυρο κανόνα σερβίς',
-        'ui.tooltip.rotationalServesError': 'Παρακαλώ εισάγετε εναν εγκυρο αριθμό περιστροφικών σερβις',
+        'ui.tooltip.rotationalServesError':
+            'Παρακαλώ εισάγετε εναν εγκυρο αριθμό περιστροφικών σερβις',
         'ui.tooltip.repoTip': 'Για κάθε πρόβλημα ή PRs επικοινωνήστε μαζί μας!!!',
         'ui.tooltip.noScoreToUndo': 'Δεν υπάρχει σκορ για αναίρεση',
         'ui.gameBoard.matchHistory.match': 'Αγώνας',
@@ -256,7 +258,7 @@ let currentLanguage = 'en-US';
 /**
  * 这里是逻辑部分
  * 不要乱动，说不定啥时候就炸了（
- * 
+ *
  * 不要乱动啊啊啊啊啊
  */
 
@@ -294,10 +296,7 @@ export function lang(key, ...args) {
  * @returns {String} 取回并格式化后的字符串
  */
 export function langForce(lang, key, ...args) {
-    if (
-        typeof languages[lang] != 'object' ||
-        typeof languages[lang][key] != 'string'
-    ) {
+    if (typeof languages[lang] != 'object' || typeof languages[lang][key] != 'string') {
         lang = 'en-US';
     }
     if (lang === 'en-US' && typeof languages[lang][key] != 'string') {
@@ -366,18 +365,14 @@ export function updateElementLanguages() {
                 // 经测试影子根不会被误认成文本，无需倒序遍历
                 for (let j = 0; j <= element.childNodes.length - 1; j++) {
                     if (element.childNodes[j].nodeName === '#text') {
-                        element.childNodes[j].nodeValue = lang(
-                            element.dataset.lang
-                        );
+                        element.childNodes[j].nodeValue = lang(element.dataset.lang);
                         foundTextNode = true;
                         break;
                     }
                 }
                 // 如果没有找到文本节点，则在最后添加一个文本节点
                 if (!foundTextNode) {
-                    let textNode = document.createTextNode(
-                        lang(element.dataset.lang)
-                    );
+                    let textNode = document.createTextNode(lang(element.dataset.lang));
                     element.appendChild(textNode);
                 }
                 console.debug(

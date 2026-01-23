@@ -21,7 +21,11 @@ export function readConfig(key, defaultValue = null) {
         let configString = localStorage.getItem('Table-Tennis-Counter');
         if (typeof configString == 'string' && configString !== null) {
             let config = JSON.parse(configString);
-            if (typeof config == 'object' && typeof config[key] != 'undefined' && config[key] !== null) {
+            if (
+                typeof config == 'object' &&
+                typeof config[key] != 'undefined' &&
+                config[key] !== null
+            ) {
                 return config[key];
             } else {
                 return defaultValue;

@@ -1,8 +1,16 @@
 import confetti from 'canvas-confetti';
-import { getLanguageList, lang, langForce, setCurrentLanguage, setLanguage, updateElementLanguages } from './lang';
+import {
+    getLanguageList,
+    lang,
+    langForce,
+    setCurrentLanguage,
+    setLanguage,
+    updateElementLanguages,
+} from './lang';
 import { readConfig, writeConfig } from './utils';
 
-export function e_load() { // 虽然但是，onclick：？
+export function e_load() {
+    // 虽然但是，onclick：？
     console.info('Hello World!');
     // 整个彩蛋
     console.log(`
@@ -32,7 +40,7 @@ repo: https://github.com/Minemetero/Table-Tennis-Counter
     e_toggleTheme(readConfig('theme', 'auto'));
     let langList = getLanguageList();
     let languageMenuEl = document.getElementById('language-menu');
-    langList.forEach(function(currentValue) {
+    langList.forEach(function (currentValue) {
         const item = document.createElement('s-popup-menu-item');
         item.innerText = langForce(currentValue, 'language.LanguageName');
         item.addEventListener('click', () => setLanguage(currentValue));
@@ -51,7 +59,7 @@ export function showSnackBar(message, id = 'snackbar', type = 'info') {
     let snackBarEl = document.getElementById('snackbar-' + id);
     if (snackBarEl === null) {
         snackBarEl = document.createElement('s-snackbar');
-        snackBarEl.id ='snackbar-' + id;
+        snackBarEl.id = 'snackbar-' + id;
         document.getElementById('tooltips').appendChild(snackBarEl);
     }
     snackBarEl.innerText = message;
@@ -122,7 +130,7 @@ export function e_toggleTheme(theme) {
             default:
                 theme = 'light';
                 break;
-        } 
+        }
     }
     switch (theme) {
         case 'auto':
@@ -148,7 +156,11 @@ export function e_toggleTheme(theme) {
             break;
     }
     writeConfig('theme', theme);
-    showSnackBar(lang('ui.tooltip.themeSetTo', lang(`ui.theme.themeName.${theme}`)), 'Theme', 'info');
+    showSnackBar(
+        lang('ui.tooltip.themeSetTo', lang(`ui.theme.themeName.${theme}`)),
+        'Theme',
+        'info'
+    );
 }
 
 export function e_reloadPage() {
@@ -164,7 +176,7 @@ export function e_gotoGitHub() {
 export function e_boardSelectChange() {
     let selectedIndex = document.getElementById('gameBoardSelector').selectedIndex;
     let boards = document.querySelectorAll('#gameBoard>div');
-    boards.forEach(function(currentValue) {
+    boards.forEach(function (currentValue) {
         currentValue.classList.remove('active');
     });
     if (selectedIndex >= 0 && selectedIndex < boards.length) {

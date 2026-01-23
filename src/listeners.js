@@ -1,5 +1,12 @@
 import { addPlayer, addWinBalls, minusWinBalls, startGame, undoLastScore } from './script';
-import { e_boardSelectChange, e_gotoGitHub, e_load, e_reloadPage, e_strictModeChange, e_toggleTheme } from './ui';
+import {
+    e_boardSelectChange,
+    e_gotoGitHub,
+    e_load,
+    e_reloadPage,
+    e_strictModeChange,
+    e_toggleTheme,
+} from './ui';
 
 export function listen() {
     document.addEventListener('DOMContentLoaded', () => {

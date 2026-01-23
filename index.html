@@ -1,67 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-lang="ui.title">Table Tennis Counter</title>
-    <link rel="stylesheet" href="./assets/css/styles.css" />
-    <link rel="stylesheet" href="./assets/css/sober-theme.css" />
-    <link rel="shortcut icon" href="./assets/img/icon.svg" type="image/svg+xml" />
-    <link rel="shortcut icon" href="./assets/img/icon.png" type="image/png" />
-    <link rel="apple-touch-icon" href="./assets/img/icon.png" />
-</head>
-<body>
-    <s-page id="page" theme="auto">
-        <s-linear-progress id="top-loading" indeterminate="true"></s-linear-progress>
-        <s-appbar id="top-bar">
-            <!--标题-->
-            <div slot="headline" data-lang="ui.title">Table Tennis Counter</div>
-            <!--右侧操作按钮-->
-            <!-- Language -->
-            <s-popup-menu slot="action" id="language-menu">
-                <s-tooltip slot="trigger" data-lang="ui.topbar.language">
-                    <s-icon-button slot="trigger">
-                        <s-icon>
-                            <svg viewBox="0 -960 960 960">
-                                <path d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title data-lang="ui.title">Table Tennis Counter</title>
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/sober-theme.css" />
+        <link rel="shortcut icon" href="./assets/img/icon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="./assets/img/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="./assets/img/icon.png" />
+    </head>
+    <body>
+        <s-page id="page" theme="auto">
+            <s-linear-progress id="top-loading" indeterminate="true"></s-linear-progress>
+            <s-appbar id="top-bar">
+                <!--标题-->
+                <div slot="headline" data-lang="ui.title">Table Tennis Counter</div>
+                <!--右侧操作按钮-->
+                <!-- Language -->
+                <s-popup-menu slot="action" id="language-menu">
+                    <s-tooltip slot="trigger" data-lang="ui.topbar.language">
+                        <s-icon-button slot="trigger">
+                            <s-icon>
+                                <svg viewBox="0 -960 960 960">
+                                    <path
+                                        d="m476-80 182-480h84L924-80h-84l-43-122H603L560-80h-84ZM160-200l-56-56 
                                 202-202q-35-35-63.5-80T190-640h84q20 39 40 68t48 58q33-33 
                                 68.5-92.5T484-720H40v-80h280v-80h80v80h280v80H564q-21 72-63 
-                                148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z">
-                                </path>
+                                148t-83 116l96 98-30 82-122-125-202 201Zm468-72h144l-72-204-72 204Z"></path>
+                                </svg>
+                            </s-icon>
+                        </s-icon-button>
+                    </s-tooltip>
+                </s-popup-menu>
+                <!-- Theme -->
+                <s-tooltip slot="action" data-lang="ui.topbar.theme">
+                    <s-icon-button id="topbar-theme-toggle" slot="trigger">
+                        <s-icon name="light_mode" id="theme-icon"></s-icon>
+                    </s-icon-button>
+                </s-tooltip>
+                <!-- More -->
+                <s-popup-menu slot="action">
+                    <s-tooltip slot="trigger" data-lang="ui.topbar.more">
+                        <s-icon-button slot="trigger">
+                            <s-icon name="more_horiz"></s-icon>
+                        </s-icon-button>
+                    </s-tooltip>
+                    <!-- GitHub -->
+                    <s-popup-menu-item id="topbar-reload-page" data-lang="ui.topbar.reload">
+                        <s-icon slot="start">
+                            <svg viewBox="0 -960 960 960">
+                                <path
+                                    d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 
+                                28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 
+                                170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z"></path>
                             </svg>
                         </s-icon>
-                    </s-icon-button>
-                </s-tooltip>
-            </s-popup-menu>
-            <!-- Theme -->
-            <s-tooltip slot="action" data-lang="ui.topbar.theme">
-                <s-icon-button id="topbar-theme-toggle" slot="trigger">
-                    <s-icon name="light_mode" id="theme-icon"></s-icon>
-                </s-icon-button>
-            </s-tooltip>
-            <!-- More -->
-            <s-popup-menu slot="action">
-                <s-tooltip slot="trigger" data-lang="ui.topbar.more">
-                    <s-icon-button slot="trigger">
-                        <s-icon name="more_horiz"></s-icon>
-                    </s-icon-button>
-                </s-tooltip>
-                <!-- GitHub -->
-                <s-popup-menu-item id="topbar-reload-page" data-lang="ui.topbar.reload">
-                    <s-icon slot="start">
-                        <svg viewBox="0 -960 960 960">
-                            <path d="M480-160q-134 0-227-93t-93-227q0-134 93-227t227-93q69 0 132 
-                                28.5T720-690v-110h80v280H520v-80h168q-32-56-87.5-88T480-720q-100 0-170 70t-70 
-                                170q0 100 70 170t170 70q77 0 139-44t87-116h84q-28 106-114 173t-196 67Z">
-                            </path>
-                        </svg>
-                    </s-icon>
-                </s-popup-menu-item>
-                <!-- GitHub -->
-                <s-popup-menu-item id="topbar-github-link" data-lang="ui.topbar.github">
-                    <s-icon slot="start">
-                        <svg viewBox="0 0 1024 1024">
-                            <path d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 
+                    </s-popup-menu-item>
+                    <!-- GitHub -->
+                    <s-popup-menu-item id="topbar-github-link" data-lang="ui.topbar.github">
+                        <s-icon slot="start">
+                            <svg viewBox="0 0 1024 1024">
+                                <path
+                                    d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 
                                 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 
                                 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 
                                 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 
@@ -69,136 +70,171 @@
                                 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 
                                 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 
                                 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 
-                                304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z">
-                            </path>
-                        </svg>
-                    </s-icon>
-                </s-popup-menu-item>
-            </s-popup-menu>
-        </s-appbar>
-        <s-scroll-view id="main">
-            <div class="responsive-flexbox" id="setup">
-                <div id="setup-settings">
-                    <div class="form-group">
-                        <!-- Winning Balls -->
-                        <s-text-field id="winBalls" data-lang="ui.setup.winningBalls" data-lang-prop="label">
-                            <s-icon-button id="setup-winBalls-add" slot="end">
-                                <s-icon name="chevron_up"></s-icon>
-                            </s-icon-button>
-                            <s-icon-button id="setup-winBalls-minus" slot="end">
-                                <s-icon name="chevron_down"></s-icon>
-                            </s-icon-button>
-                        </s-text-field>
-                    </div>
-                    <div class="form-group" id="playerInputGroup">
-                        <!-- Player Name -->
-                        <s-text-field id="playerName" data-lang="ui.setup.playerName" data-lang-prop="label">
-                            <s-button type="text" slot="end" id="setup-addPlayer" data-lang="ui.setup.addPlayer">
-                                <s-icon slot="start" name="add"></s-icon>
-                            </s-button>
-                        </s-text-field>
-                    </div>
-                    <div class="form-group">
-                        <!-- Sober已经有下拉输入框力，太好力！ -->
-                        <s-picker class="dropdown-input" id="serveRule" data-lang="ui.setup.serveRule" data-lang-prop="label">
-                            <s-picker-item value="0" data-lang="ui.setup.serveRule.none"></s-picker-item>
-                            <s-picker-item value="1" data-lang="ui.setup.serveRule.inTurn"></s-picker-item>
-                        </s-picker>
-                    </div>
-                    <div class="form-group" id="rotationalServesGroup" hidden>
-                        <!-- Balls Each Turn -->
-                        <s-text-field id="rotationalServes" data-lang="ui.setup.rotationalServes" data-lang-prop="label" value="2"></s-text-field>
-                    </div>
-                    <div class="form-group">
-                        <!-- Strict Mode -->
-                        <div style="display: flex; align-items: center; gap: 8px;">
-                            <s-switch id="strictMode"></s-switch>
-                            <div data-lang="ui.setup.strictMode"></div>
+                                304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"></path>
+                            </svg>
+                        </s-icon>
+                    </s-popup-menu-item>
+                </s-popup-menu>
+            </s-appbar>
+            <s-scroll-view id="main">
+                <div class="responsive-flexbox" id="setup">
+                    <div id="setup-settings">
+                        <div class="form-group">
+                            <!-- Winning Balls -->
+                            <s-text-field
+                                id="winBalls"
+                                data-lang="ui.setup.winningBalls"
+                                data-lang-prop="label">
+                                <s-icon-button id="setup-winBalls-add" slot="end">
+                                    <s-icon name="chevron_up"></s-icon>
+                                </s-icon-button>
+                                <s-icon-button id="setup-winBalls-minus" slot="end">
+                                    <s-icon name="chevron_down"></s-icon>
+                                </s-icon-button>
+                            </s-text-field>
                         </div>
-                    </div>
-                </div>
-                <div id="setup-list">
-                    <div class="player-list" id="playerListGroup">
-                        <h2 id="playerListTitle" data-lang="ui.setup.playerListHint"></h2>
-                        <ul id="playerList"></ul>
-                    </div>
-                    <!-- Start Game -->
-                    <!-- 我也不知道为啥，这里必须手动指定data-lang-prop -->
-                    <s-button class="start-button" id="startGameButton" data-lang="ui.setup.startGame" data-lang-prop="innerText"></s-button>
-                </div>
-            </div>
-            
-            <div id="gameBoardWrapper">
-                <!-- Tab控制 -->
-                <s-tab class="game-board" id="gameBoardSelector" style="justify-content: center">
-                    <s-tab-item selected="true">
-                        <div slot="text" data-lang="ui.gameBoard.tab.score"></div>
-                    </s-tab-item>
-                    <s-tab-item>
-                        <div slot="text" data-lang="ui.gameBoard.tab.history"></div>
-                    </s-tab-item>
-                    <s-tab-item>
-                        <div slot="text" data-lang="ui.gameBoard.tab.info"></div>
-                    </s-tab-item>
-                </s-tab>
-                <div id="gameBoard">
-                    <!-- Tab：计分 -->
-                    <div class="responsive-flexbox active" id="board-score">
-                        <div id="currentMatchContainer">
-                            <!-- Current Match -->
-                            <h2 data-lang="ui.gameBoard.currentMatch"></h2>
-                            <div id="currentMatch"></div>
-                            <div class="result-group">
-                                <p id="result"></p>
-                                <!-- Undo Button -->
-                                <s-button class="undo-button" id="undoButton" type="filled-tonal">
-                                    <span data-lang="ui.gameBoard.undo">Undo</span>
+                        <div class="form-group" id="playerInputGroup">
+                            <!-- Player Name -->
+                            <s-text-field
+                                id="playerName"
+                                data-lang="ui.setup.playerName"
+                                data-lang-prop="label">
+                                <s-button
+                                    type="text"
+                                    slot="end"
+                                    id="setup-addPlayer"
+                                    data-lang="ui.setup.addPlayer">
+                                    <s-icon slot="start" name="add"></s-icon>
                                 </s-button>
+                            </s-text-field>
+                        </div>
+                        <div class="form-group">
+                            <!-- Sober已经有下拉输入框力，太好力！ -->
+                            <s-picker
+                                class="dropdown-input"
+                                id="serveRule"
+                                data-lang="ui.setup.serveRule"
+                                data-lang-prop="label">
+                                <s-picker-item
+                                    value="0"
+                                    data-lang="ui.setup.serveRule.none"></s-picker-item>
+                                <s-picker-item
+                                    value="1"
+                                    data-lang="ui.setup.serveRule.inTurn"></s-picker-item>
+                            </s-picker>
+                        </div>
+                        <div class="form-group" id="rotationalServesGroup" hidden>
+                            <!-- Balls Each Turn -->
+                            <s-text-field
+                                id="rotationalServes"
+                                data-lang="ui.setup.rotationalServes"
+                                data-lang-prop="label"
+                                value="2"></s-text-field>
+                        </div>
+                        <div class="form-group">
+                            <!-- Strict Mode -->
+                            <div style="display: flex; align-items: center; gap: 8px">
+                                <s-switch id="strictMode"></s-switch>
+                                <div data-lang="ui.setup.strictMode"></div>
                             </div>
                         </div>
-                        <div id="playerScores">
-                            <!-- Player Scores -->
-                            <h2 data-lang="ui.gameBoard.playerScores"></h2>
-                            <ul id="playerScoreList"></ul>
-                        </div>
                     </div>
-                    <!-- Tab：历史 -->
-                    <div id="board-history">
-                        <div id="matchHistory">
-                            <h2 data-lang="ui.gameBoard.matchHistory"></h2>
-                            <s-table id="historyTable" style="overflow: auto; display: block; width: 60%">
-                                <s-thead>
-                                    <s-tr>
-                                        <s-th data-lang="ui.gameBoard.matchHistory.match"></s-th>
-                                        <s-th data-lang="ui.gameBoard.matchHistory.score"></s-th>
-                                        <s-th data-lang="ui.gameBoard.matchHistory.setScore"></s-th>
-                                        <s-th data-lang="ui.gameBoard.matchHistory.winner"></s-th>
-                                    </s-tr>
-                                </s-thead>
-                                <s-tbody>
-                                    <!-- Rows will be populated by JS -->
-                                </s-tbody>
-                            </s-table>
+                    <div id="setup-list">
+                        <div class="player-list" id="playerListGroup">
+                            <h2 id="playerListTitle" data-lang="ui.setup.playerListHint"></h2>
+                            <ul id="playerList"></ul>
                         </div>
+                        <!-- Start Game -->
+                        <!-- 我也不知道为啥，这里必须手动指定data-lang-prop -->
+                        <s-button
+                            class="start-button"
+                            id="startGameButton"
+                            data-lang="ui.setup.startGame"
+                            data-lang-prop="innerText"></s-button>
                     </div>
-                    <!-- Tab：信息 -->
-                    <div id="board-info">
-                        <div id="matchOrderContainer">
-                            <!-- Match Order -->
-                            <h2 data-lang="ui.gameBoard.matchOrder"></h2>
-                            <ul id="matchOrderList"></ul>
+                </div>
+
+                <div id="gameBoardWrapper">
+                    <!-- Tab控制 -->
+                    <s-tab
+                        class="game-board"
+                        id="gameBoardSelector"
+                        style="justify-content: center">
+                        <s-tab-item selected="true">
+                            <div slot="text" data-lang="ui.gameBoard.tab.score"></div>
+                        </s-tab-item>
+                        <s-tab-item>
+                            <div slot="text" data-lang="ui.gameBoard.tab.history"></div>
+                        </s-tab-item>
+                        <s-tab-item>
+                            <div slot="text" data-lang="ui.gameBoard.tab.info"></div>
+                        </s-tab-item>
+                    </s-tab>
+                    <div id="gameBoard">
+                        <!-- Tab：计分 -->
+                        <div class="responsive-flexbox active" id="board-score">
+                            <div id="currentMatchContainer">
+                                <!-- Current Match -->
+                                <h2 data-lang="ui.gameBoard.currentMatch"></h2>
+                                <div id="currentMatch"></div>
+                                <div class="result-group">
+                                    <p id="result"></p>
+                                    <!-- Undo Button -->
+                                    <s-button
+                                        class="undo-button"
+                                        id="undoButton"
+                                        type="filled-tonal">
+                                        <span data-lang="ui.gameBoard.undo">Undo</span>
+                                    </s-button>
+                                </div>
+                            </div>
+                            <div id="playerScores">
+                                <!-- Player Scores -->
+                                <h2 data-lang="ui.gameBoard.playerScores"></h2>
+                                <ul id="playerScoreList"></ul>
+                            </div>
+                        </div>
+                        <!-- Tab：历史 -->
+                        <div id="board-history">
+                            <div id="matchHistory">
+                                <h2 data-lang="ui.gameBoard.matchHistory"></h2>
+                                <s-table
+                                    id="historyTable"
+                                    style="overflow: auto; display: block; width: 60%">
+                                    <s-thead>
+                                        <s-tr>
+                                            <s-th
+                                                data-lang="ui.gameBoard.matchHistory.match"></s-th>
+                                            <s-th
+                                                data-lang="ui.gameBoard.matchHistory.score"></s-th>
+                                            <s-th
+                                                data-lang="ui.gameBoard.matchHistory.setScore"></s-th>
+                                            <s-th
+                                                data-lang="ui.gameBoard.matchHistory.winner"></s-th>
+                                        </s-tr>
+                                    </s-thead>
+                                    <s-tbody>
+                                        <!-- Rows will be populated by JS -->
+                                    </s-tbody>
+                                </s-table>
+                            </div>
+                        </div>
+                        <!-- Tab：信息 -->
+                        <div id="board-info">
+                            <div id="matchOrderContainer">
+                                <!-- Match Order -->
+                                <h2 data-lang="ui.gameBoard.matchOrder"></h2>
+                                <ul id="matchOrderList"></ul>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </s-scroll-view>
+            <div id="tooltips">
+                <s-snackbar id="snackbar-snackbar"> Snackbar Message </s-snackbar>
             </div>
-        </s-scroll-view>
-        <div id="tooltips">
-            <s-snackbar id="snackbar-snackbar">
-                Snackbar Message
-            </s-snackbar>
-        </div>
-    </s-page>
-    
-    <script defer type="module" src="./src/index.js"></script>
-</body>
+        </s-page>
+
+        <script defer type="module" src="./src/index.js"></script>
+    </body>
 </html>

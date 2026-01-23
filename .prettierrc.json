@@ -1,0 +1,25 @@
+{
+    "bracketSameLine": true,
+    "endOfLine": "lf",
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "useTabs": false,
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "semi": true,
+    "printWidth": 100,
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "css",
+
+    "overrides": [
+        {
+            "files": "*.css",
+            "options": {
+                "parser": "css",
+                "printWidth": 160,
+                "tabWidth": 4
+            }
+        }
+    ]
+}

@@ -75,11 +75,7 @@ export function startGame() {
         return;
     }
     if (serveRule === 1 && (isNaN(rotationalServes) || rotationalServes <= 0)) {
-        showSnackBar(
-            lang('ui.tooltip.rotationalServesError'),
-            'RotationalServesError',
-            'error'
-        );
+        showSnackBar(lang('ui.tooltip.rotationalServesError'), 'RotationalServesError', 'error');
         hideLoading();
         return;
     }
@@ -112,7 +108,7 @@ export function checkMatchPoint(playerName) {
     const strictMode = document.getElementById('strictMode').checked;
     const playerScore = currentMatchScores[playerName];
     // Get the other player's name
-    const otherPlayer = Object.keys(currentMatchScores).find(p => p !== playerName);
+    const otherPlayer = Object.keys(currentMatchScores).find((p) => p !== playerName);
     const otherScore = currentMatchScores[otherPlayer];
 
     let isMatchPoint = false;
@@ -130,10 +126,7 @@ export function checkMatchPoint(playerName) {
     }
 
     if (isMatchPoint) {
-        document.getElementById('result').innerText = lang(
-            'ui.gameBoard.matchPoint',
-            playerName
-        );
+        document.getElementById('result').innerText = lang('ui.gameBoard.matchPoint', playerName);
         setTimeout(() => {
             document.getElementById('result').innerText = '';
         }, 1500);
@@ -166,13 +159,16 @@ export function incrementCurrentMatchScore(playerName) {
     updateCurrentMatch();
 
     // Get the other player's name
-    const otherPlayer = players[currentMatch[0]] === playerName ? players[currentMatch[1]] : players[currentMatch[0]];
-    
+    const otherPlayer =
+        players[currentMatch[0]] === playerName
+            ? players[currentMatch[1]]
+            : players[currentMatch[0]];
+
     // Check win condition based on strict mode
-    const hasWon = strictMode 
-        ? (currentMatchScores[playerName] >= winBalls && 
-           (currentMatchScores[playerName] - currentMatchScores[otherPlayer] >= 2 || 
-            currentMatchScores[playerName] >= winBalls + 2))
+    const hasWon = strictMode
+        ? currentMatchScores[playerName] >= winBalls &&
+          (currentMatchScores[playerName] - currentMatchScores[otherPlayer] >= 2 ||
+              currentMatchScores[playerName] >= winBalls + 2)
         : currentMatchScores[playerName] >= winBalls;
 
     if (hasWon) {
@@ -193,15 +189,12 @@ export function incrementCurrentMatchScore(playerName) {
             winner: playerName,
         });
 
-        document.getElementById('result').innerText = lang(
-            'ui.gameBoard.winMessage',
-            playerName
-        );
+        document.getElementById('result').innerText = lang('ui.gameBoard.winMessage', playerName);
         disableScoreButtons();
-        
+
         // Wining Animation
         showWinnerConfetti();
-        
+
         setTimeout(() => {
             document.getElementById('result').innerText = '';
             updatePlayerScoreList();
@@ -262,8 +255,12 @@ export function updateCurrentMatch() {
             </s-button>
         </div>
     `;
-    document.querySelector('.score-button.player1').addEventListener('click', () => incrementCurrentMatchScore(player1));
-    document.querySelector('.score-button.player2').addEventListener('click', () => incrementCurrentMatchScore(player2));
+    document
+        .querySelector('.score-button.player1')
+        .addEventListener('click', () => incrementCurrentMatchScore(player1));
+    document
+        .querySelector('.score-button.player2')
+        .addEventListener('click', () => incrementCurrentMatchScore(player2));
 }
 
 export function updatePlayerScoreList() {
@@ -382,5 +379,5 @@ export function undoLastScore() {
 
 window.incrementCurrentMatchScore = incrementCurrentMatchScore;
 
-console.log({matchHistory});
-console.log({totalScores});
+console.log({ matchHistory });
+console.log({ totalScores });
